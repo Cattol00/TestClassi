@@ -16,6 +16,14 @@ namespace TestClassi
         {
             InitializeComponent();
         }
+
+        private List<Monster> monsters = new List<Monster>();
+
+        private Monster addMonster (Monster m)
+        {
+            monsters.Add(m);
+            return m;
+        }
            
         private void Form1_Load(object sender, EventArgs e)
         {
