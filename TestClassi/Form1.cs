@@ -19,7 +19,7 @@ namespace TestClassi
             InitializeComponent();
             monsters = Deserialiser.deserialiseMonsters();
 
-            foreach (Monster m in monsters)
+            /* foreach (Monster m in monsters)
             {
                 Console.WriteLine(m.GetType());
                 if (m.GetType() == typeof(Fire_Monster))
@@ -27,7 +27,7 @@ namespace TestClassi
                     Fire_Monster f = m as Fire_Monster;
                     Console.WriteLine(f.fireDamage);
                 }
-            }
+            } */
         }
 
         private Monster addMonster (Monster m)
