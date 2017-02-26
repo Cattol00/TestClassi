@@ -39,7 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.enemyImg = new System.Windows.Forms.PictureBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -48,8 +48,10 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
+            this.prevButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyImg)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -152,13 +154,13 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Tipo";
             // 
-            // pictureBox2
+            // enemyImg
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(837, 325);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(262, 135);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.enemyImg.Location = new System.Drawing.Point(837, 325);
+            this.enemyImg.Name = "enemyImg";
+            this.enemyImg.Size = new System.Drawing.Size(262, 135);
+            this.enemyImg.TabIndex = 13;
+            this.enemyImg.TabStop = false;
             // 
             // textBox6
             // 
@@ -240,11 +242,33 @@
             this.textBox13.TabIndex = 21;
             this.textBox13.Tag = "";
             // 
+            // prevButton
+            // 
+            this.prevButton.Location = new System.Drawing.Point(837, 296);
+            this.prevButton.Name = "prevButton";
+            this.prevButton.Size = new System.Drawing.Size(75, 23);
+            this.prevButton.TabIndex = 22;
+            this.prevButton.Text = "<";
+            this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
+            // 
+            // nextButton
+            // 
+            this.nextButton.Location = new System.Drawing.Point(1024, 296);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 23;
+            this.nextButton.Text = ">";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 506);
+            this.Controls.Add(this.nextButton);
+            this.Controls.Add(this.prevButton);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox11);
@@ -253,7 +277,7 @@
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.enemyImg);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.pictureBox1);
@@ -270,7 +294,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +312,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox enemyImg;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
@@ -297,6 +321,8 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Button prevButton;
+        private System.Windows.Forms.Button nextButton;
     }
 }
 

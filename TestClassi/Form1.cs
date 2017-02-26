@@ -30,15 +30,36 @@ namespace TestClassi
             } */
         }
 
+        private int currentMonsterIndex = 0;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            renderMonster(currentMonsterIndex);
+        }
+
         private Monster addMonster (Monster m)
         {
             monsters.Add(m);
             return m;
-        }
-           
-        private void Form1_Load(object sender, EventArgs e)
+        } 
+
+        private void renderMonster(int monsterIndex)
         {
-            
+            enemyImg.Image = monsters[monsterIndex].image;
+        }
+
+        private void prevButton_Click(object sender, EventArgs e)
+        {
+            if (currentMonsterIndex == 0) return;
+            currentMonsterIndex--;
+            renderMonster(currentMonsterIndex);
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            if (currentMonsterIndex == monsters.Count - 1) return;
+            currentMonsterIndex++;
+            renderMonster(currentMonsterIndex);
         }
     }
 }

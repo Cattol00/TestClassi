@@ -17,7 +17,7 @@ namespace TestClassi
 
         public static string getImagePath(string imageName)
         {
-            return imagesPath + imageName + ".jpg";
+            return imagesPath + imageName.ToLower() + ".jpg";
         }
     }
 }   

@@ -1,28 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace TestClassi
 {
     class Monster
     {
         private string _name;
-        public string name
-        {
-            get
-            {
-                return _name;
-            }
-        }
-
+        public string name { get { return _name; } }
+        
         private int _maxHp;
-        public int maxHp
-        {
-            get
-            {
-                return _maxHp;
-            }
-        }
-
+        public int maxHp { get { return _maxHp; } }
+        
         private int _currentHp;
         public int currentHp
         {
@@ -32,7 +21,6 @@ namespace TestClassi
                 else if (value > _maxHp) value = _maxHp;
                 _currentHp = value;
             }
-
             get
             {
                 return _currentHp;
@@ -40,31 +28,13 @@ namespace TestClassi
         }
 
         private int _damage;
-        public int damage
-        {
-            get
-            {
-                return _damage;
-            }
-        }
-
+        public int damage { get { return _damage; } }
+        
         private int _healFactor;
-        public int healFactor
-        {
-            get
-            {
-                return _healFactor;
-            }
-        }
-
-        public bool alive
-        {
-            get
-            {
-                return currentHp > 0;
-            }
-        }
-
+        public int healFactor { get { return _healFactor; } }
+       
+        public bool alive { get { return currentHp > 0; } }
+        
         public string status
         {
             get
@@ -73,14 +43,18 @@ namespace TestClassi
             }
         }
 
+        public Image image { get; set; }
+
         public Monster(string name, int maxHp, int damage, int healFactor = 0)  //parametro opzionale
         {
             _name = name;
 
+            image = Image.FromFile(Assets.getImagePath(name));
+
             if (maxHp < 1) maxHp = 1;
             _maxHp = maxHp;
 
-            _currentHp = maxHp;
+            currentHp = maxHp;
 
             if (damage < 0) damage = 0;
             _damage = damage;
