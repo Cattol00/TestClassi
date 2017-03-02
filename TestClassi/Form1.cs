@@ -34,7 +34,8 @@ namespace TestClassi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            renderMonster(currentMonsterIndex);
+            renderMonster(monsters[currentMonsterIndex]);
+            renderMonster(monsters[0], false);
         }
 
         private Monster addMonster (Monster m)
@@ -43,23 +44,45 @@ namespace TestClassi
             return m;
         } 
 
-        private void renderMonster(int monsterIndex)
+        private void renderMonster(Monster m, bool isPlayer = true)
         {
-            enemyImg.Image = monsters[monsterIndex].image;
+            if (isPlayer)
+            {
+                pNameLbl.Text = m.name;
+                pHpLbl.Text = m.status;
+                pHpBar.Maximum = m.maxHp;
+                pHpBar.Value = m.currentHp;
+                pPicture.Image = m.image;
+            }
+            else
+            {
+                eNameLbl.Text = m.name;
+                eHpLbl.Text = m.status;
+                eHpBar.Maximum = m.maxHp;
+                eHpBar.Value = m.currentHp;
+                ePicture.Image = m.image;
+            }
         }
 
         private void prevButton_Click(object sender, EventArgs e)
         {
             if (currentMonsterIndex == 0) return;
             currentMonsterIndex--;
-            renderMonster(currentMonsterIndex);
+            renderMonster(monsters[currentMonsterIndex]);
         }
 
         private void nextButton_Click(object sender, EventArgs e)
         {
             if (currentMonsterIndex == monsters.Count - 1) return;
             currentMonsterIndex++;
-            renderMonster(currentMonsterIndex);
+            renderMonster(monsters[currentMonsterIndex]);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Monster m = monsters[currentMonsterIndex];
+            m.currentHp -= 20;
+            renderMonster(m);
         }
     }
 }

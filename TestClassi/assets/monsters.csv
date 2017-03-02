@@ -1,7 +1,5 @@
 type,name,maxHp,damage,healFactor
-fire,obscurio,250,100,0
-monster,kolossus,300,70,10
-monster,tasarau,200,150,25
-fire,lavion,270,110,0
-fire,magmion,350,150,0
-monster,carrapax,250,100,20
+monster,Kolossus,300,70,10
+monster,Tasarau,200,150,25
+fire,Lavion,270,110,0
+monster,Carrapax,250,100,20
