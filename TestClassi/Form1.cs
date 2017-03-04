@@ -18,6 +18,8 @@ namespace TestClassi
         {
             InitializeComponent();
             monsters = Deserialiser.deserialiseMonsters();
+            listView1.Items.Add(new ListViewItem("prova"));
+            listView1.Items.Add("CIAO");
 
             /* foreach (Monster m in monsters)
             {
@@ -80,9 +82,15 @@ namespace TestClassi
 
         private void button1_Click(object sender, EventArgs e)
         {
+            logs.Items.Add(eNameLbl.Text + " ha attaccato " + pNameLbl.Text);
             Monster m = monsters[currentMonsterIndex];
             m.currentHp -= 20;
             renderMonster(m);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
